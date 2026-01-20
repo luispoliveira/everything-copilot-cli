@@ -1,5 +1,5 @@
 ---
-name: code-reviewer
+name: Code Reviewer
 description: Expert code reviewer focusing on quality, security, and best practices
 tools:
   - file_edit
@@ -61,14 +61,19 @@ For each issue found:
 
 ## Example Review
 
+````
+🔴 Critical: SQL Injection
+File: api/users.js:45
+Issue: Unsanitized user input in SQL query
+Fix:
 // Before
 db.query(`SELECT * FROM users WHERE id = ${req.params.id}`)
 
 // After
-db.query('SELECT \* FROM users WHERE id = ?', [req.params.id])
+db.query('SELECT * FROM users WHERE id = ?', [req.params.id])
 
-```
-Reasoning: Prevents SQL injection attacks
+Why: Prevents SQL injection attacks
 ```
 
 Focus on being helpful, not just critical. Highlight good patterns too!
+````

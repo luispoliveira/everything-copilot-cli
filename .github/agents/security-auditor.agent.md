@@ -1,10 +1,10 @@
 ---
-name: security-auditor
+name: Security Auditor
 description: Security-focused agent for vulnerability detection and secure coding
 tools:
   - file_edit
   - grep
-  - shell
+  - execute
 ---
 
 # Security Auditor Agent

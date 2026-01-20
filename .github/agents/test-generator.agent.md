@@ -1,9 +1,9 @@
 ---
-name: test-generator
+name: Test Generator
 description: Generates comprehensive test suites with high coverage
 tools:
   - file_edit
-  - shell
+  - execute
 ---
 
 # Test Generator Agent

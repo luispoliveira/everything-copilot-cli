@@ -1,5 +1,5 @@
 ---
-name: doc-writer
+name: Documentation Writer
 description: Creates comprehensive, clear documentation
 tools:
   - file_edit

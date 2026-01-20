@@ -9,6 +9,9 @@ Configuração completa e organizada para GitHub Copilot CLI com agentes customi
 3. ln -s everything-copilot-cli/.github/instructions/ instructions
 4. ln -s everything-copilot-cli/.github/agents/ agents
 5. ln -s everything-copilot-cli/.github/skills/ skills
+6. cd para /Users/"user"/Library/Application Support/Code/User
+7. ln -s everything-copilot-cli/.github/instructions/\* prompts/
+8. ln -s everything-copilot-cli/.github/agents/\* agents/
 
 ## 📁 Estrutura
 
