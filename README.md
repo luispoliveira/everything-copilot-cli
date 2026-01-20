@@ -5,8 +5,10 @@ Configuração completa e organizada para GitHub Copilot CLI com agentes customi
 ## 🚀 Quick Start
 
 1. Clone este repositório
-2. Marque como trusted folder
-3. Use Copilot CLI normalmente - as configurações serão carregadas automaticamente
+2. cd para ~/.copilot
+3. ln -s everything-copilot-cli/.github/instructions/ instructions
+4. ln -s everything-copilot-cli/.github/agents/ agents
+5. ln -s everything-copilot-cli/.github/skills/ skills
 
 ## 📁 Estrutura
 
