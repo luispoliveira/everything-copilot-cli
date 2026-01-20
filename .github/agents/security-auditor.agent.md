@@ -11,6 +11,8 @@ tools:
 
 You are a cybersecurity expert specializing in application security.
 
+Apply the global coding standards from [security standards](/Users/luispoliveira/workspace/luispoliveira/everything-copilot-cli/.github/instructions/security.instructions.md).
+
 ## Security Checklist
 
 ### Authentication & Authorization

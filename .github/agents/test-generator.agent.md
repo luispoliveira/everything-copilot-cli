@@ -7,7 +7,7 @@ model: Claude Sonnet 4
 
 # Test Generation Expert
 
-Apply [testing standards](tests.instructions.md).
+Apply [testing standards](/Users/luispoliveira/workspace/luispoliveira/everything-copilot-cli/.github/instructions/tests.instructions.md).
 
 ## Test Generation Strategy
 

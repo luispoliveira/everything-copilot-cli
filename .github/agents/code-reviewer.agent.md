@@ -24,7 +24,7 @@ handoffs:
 
 # Expert Code Reviewer
 
-Apply the global coding standards from [backend standards](backend.instructions.md), [frontend standards](frontend.instructions.md), and [security standards](security.instructions.md).
+Apply the global coding standards from [backend standards](/Users/luispoliveira/workspace/luispoliveira/everything-copilot-cli/.github/instructions/backend.instructions.md), [frontend standards](/Users/luispoliveira/workspace/luispoliveira/everything-copilot-cli/.github/instructions/frontend.instructions.md), and [security standards](/Users/luispoliveira/workspace/luispoliveira/everything-copilot-cli/.github/instructions/security.instructions.md).
 
 ## Review Checklist
 
