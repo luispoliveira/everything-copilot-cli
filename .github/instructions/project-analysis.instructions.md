@@ -1,5 +1,5 @@
 ---
-applyTo: '**/project-*.md'
+applyTo: '**/project-analysis-*/**'
 description: Standards for project analysis and handover documentation
 name: Project Analysis Standards
 ---
@@ -9,6 +9,70 @@ name: Project Analysis Standards
 ## Purpose
 
 These standards guide the analysis of projects during handover, ensuring comprehensive evaluation and actionable documentation.
+
+## Report Structure
+
+### Folder Organization
+
+```
+project-analysis-YYYY-MM-DD/
+├── README.md                    # Index with links to all files
+├── 00-executive-summary.md      # Overview for stakeholders
+├── 01-project-overview.md       # Tech stack, structure
+├── 02-architecture.md           # Design patterns, concerns
+├── 03-dependencies.md           # Full dependency analysis
+├── 04-security.md               # Security vulnerabilities
+├── 05-testing.md                # Test coverage analysis
+├── 06-documentation.md          # Documentation status
+├── 07-technical-debt.md         # Code smells, TODOs
+├── 08-performance.md            # Performance issues
+├── 09-devops.md                 # CI/CD, infrastructure
+├── 10-risk-register.md          # All issues prioritized
+├── 11-onboarding-guide.md       # Getting started guide
+└── 12-recommendations.md        # Improvement roadmap
+```
+
+## Code Example Requirements
+
+### Every Issue MUST Include:
+
+1. **Location**: Exact file path and line numbers
+2. **Problem Code**: Actual code snippet from the codebase
+3. **Explanation**: WHY it's a problem (not just what)
+4. **Fix**: Corrected code showing the solution
+5. **Effort**: Estimated time to fix
+6. **References**: Links to best practices/documentation
+
+### Example Format
+
+```markdown
+#### Issue [ID]: [Title]
+
+**Severity:** 🔴 CRITICAL | 🟠 HIGH | 🟡 MEDIUM | 🟢 LOW  
+**Location:** \`path/to/file.ts:45-52\`
+
+**❌ Problem Code:**
+
+\`\`\`typescript
+// path/to/file.ts:45-52
+[actual problematic code here]
+\`\`\`
+
+**🔍 Why This Is a Problem:**
+
+1. [Specific reason 1]
+2. [Specific reason 2]
+
+**✅ Recommended Fix:**
+
+\`\`\`typescript
+// path/to/file.ts:45-52 (FIXED)
+[corrected code here]
+\`\`\`
+
+**📋 Effort Estimate:** X hours  
+**📚 References:** [links]
+```
 
 ## Analysis Principles
 
@@ -101,25 +165,26 @@ Consider these factors:
 
 ## Documentation Requirements
 
-### Report Structure
+### Token Management
 
-1. **Executive Summary** - 2-3 paragraphs for stakeholders
-2. **Technical Details** - For developers
-3. **Risk Register** - Prioritized issues
-4. **Onboarding Guide** - For new team members
-5. **Recommendations** - Actionable roadmap
+To prevent context exhaustion:
+
+1. **Analyze in phases** - Complete one topic before starting another
+2. **Ask for confirmation** - Before creating each file, ask user to type "go"
+3. **Create incrementally** - One file at a time
+4. **Show progress** - Keep user informed of analysis status
 
 ### File Naming
 
 ```
-project-YYYY-MM-DD.md
+project-analysis-YYYY-MM-DD/
 ```
 
-Example: `project-2026-01-21.md`
+Example: `project-analysis-2026-01-21/`
 
 ### Location
 
-Save in project root directory for visibility.
+Create folder in project root directory for visibility.
 
 ## Analysis Techniques
 
