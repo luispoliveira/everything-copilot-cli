@@ -117,6 +117,6 @@ After updating the file, present a summary **in the chat only**.
 ## ⚠️ Constraint Checklist
 
 - Always use **€** (Euros).
-- Always specific check **Google Finance** or credible sources for Portuguese data.
+- Always specific check **Google Finance**, **ECO**, **Jornal de Negócios** or credible sources for Portuguese data.
 - Do NOT put the weekly chat summary in the Obsidian note; keep the note for structured data and history.
 - If the user asks to change goals, update the "Objetivos Financeiros" section.
