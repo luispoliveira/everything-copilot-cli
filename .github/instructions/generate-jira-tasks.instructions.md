@@ -1,4 +1,3 @@
-````instructions
 # Rule: Generating Jira Tasks from a PRD
 
 ## Goal
@@ -29,24 +28,24 @@ To guide in creating a detailed, structured Jira-ready task list in Markdown for
 
 Use the Fibonacci sequence for estimation:
 
-| Points | Complexity | Time Estimate | Description |
-|--------|------------|---------------|-------------|
-| 1 | Trivial | < 2 hours | Simple config change, copy update, minor fix |
-| 2 | Simple | 2-4 hours | Small feature, single file change |
-| 3 | Medium | 4-8 hours | Standard feature, multiple files |
-| 5 | Complex | 1-2 days | Multiple components, requires testing |
-| 8 | Very Complex | 2-4 days | Large feature, multiple integrations |
-| 13 | Epic-level | 1 week+ | Major feature, should be broken down further |
+| Points | Complexity   | Time Estimate | Description                                  |
+| ------ | ------------ | ------------- | -------------------------------------------- |
+| 1      | Trivial      | < 2 hours     | Simple config change, copy update, minor fix |
+| 2      | Simple       | 2-4 hours     | Small feature, single file change            |
+| 3      | Medium       | 4-8 hours     | Standard feature, multiple files             |
+| 5      | Complex      | 1-2 days      | Multiple components, requires testing        |
+| 8      | Very Complex | 2-4 days      | Large feature, multiple integrations         |
+| 13     | Epic-level   | 1 week+       | Major feature, should be broken down further |
 
 ## Priority Levels
 
-| Priority | Description |
-|----------|-------------|
+| Priority    | Description                                           |
+| ----------- | ----------------------------------------------------- |
 | **Highest** | Blocker - Must be done immediately, blocks other work |
-| **High** | Critical path - Required for core functionality |
-| **Medium** | Standard priority - Important but not blocking |
-| **Low** | Nice to have - Can be deferred if needed |
-| **Lowest** | Optional - Enhancement for future consideration |
+| **High**    | Critical path - Required for core functionality       |
+| **Medium**  | Standard priority - Important but not blocking        |
+| **Low**     | Nice to have - Can be deferred if needed              |
+| **Lowest**  | Optional - Enhancement for future consideration       |
 
 ## Tags/Labels
 
@@ -79,13 +78,13 @@ The generated Jira task list _must_ follow this structure:
 
 ## Summary
 
-| Type | Count |
-|------|-------|
-| Epics | X |
-| Stories | X |
-| Tasks | X |
-| Sub-tasks | X |
-| **Total Story Points** | X |
+| Type                   | Count |
+| ---------------------- | ----- |
+| Epics                  | X     |
+| Stories                | X     |
+| Tasks                  | X     |
+| Sub-tasks              | X     |
+| **Total Story Points** | X     |
 
 ---
 
@@ -95,9 +94,11 @@ The generated Jira task list _must_ follow this structure:
 **Priority:** [Highest/High/Medium/Low/Lowest]
 **Tags:** `tag1`, `tag2`
 **Description:**
+
 > [Detailed description of the epic, including the business value and high-level scope]
 
 **Acceptance Criteria:**
+
 - [ ] [Criterion 1]
 - [ ] [Criterion 2]
 
@@ -112,13 +113,16 @@ The generated Jira task list _must_ follow this structure:
 **Tags:** `tag1`, `tag2`
 
 **Description:**
+
 > As a [user type], I want [functionality] so that [benefit].
 
 **Acceptance Criteria:**
+
 - [ ] [Criterion 1]
 - [ ] [Criterion 2]
 
 **Technical Notes:**
+
 - [Any technical considerations or implementation hints]
 
 ---
@@ -133,13 +137,16 @@ The generated Jira task list _must_ follow this structure:
 **Assignee:** [Optional - Team/Role]
 
 **Description:**
+
 > [Brief description of the sub-task]
 
 **Implementation Details:**
+
 - [Step 1]
 - [Step 2]
 
 **Affected Files:**
+
 - `path/to/file1.ts` - [Brief description]
 - `path/to/file2.ts` - [Brief description]
 
@@ -155,13 +162,16 @@ The generated Jira task list _must_ follow this structure:
 **Assignee:** [Optional - Team/Role]
 
 **Description:**
+
 > [Detailed description of what needs to be done - technical work not user-facing]
 
 **Implementation Details:**
+
 - [Step 1]
 - [Step 2]
 
 **Affected Files:**
+
 - `path/to/file1.ts` - [Brief description]
 - `path/to/file2.ts` - [Brief description]
 
@@ -176,23 +186,24 @@ The generated Jira task list _must_ follow this structure:
 **Tags:** `tag1`
 
 **Description:**
+
 > [Brief description of the sub-task]
 
 ---
 
 ## Dependencies
 
-| Item | Depends On | Type |
-|------|------------|------|
-| Story 1.2 | Story 1.1 | Blocks |
+| Item       | Depends On | Type       |
+| ---------- | ---------- | ---------- |
+| Story 1.2  | Story 1.1  | Blocks     |
 | Task 2.1.1 | Task 1.1.1 | Relates to |
 
 ---
 
 ## Risk Assessment
 
-| Risk | Impact | Mitigation |
-|------|--------|------------|
+| Risk               | Impact          | Mitigation            |
+| ------------------ | --------------- | --------------------- |
 | [Risk description] | High/Medium/Low | [Mitigation strategy] |
 
 ---
@@ -203,7 +214,7 @@ The generated Jira task list _must_ follow this structure:
 - Link dependencies after all items are created
 - Adjust story points after team refinement session
 - Tags should be created in Jira before import if they don't exist
-````
+```
 
 ## Issue Type Hierarchy
 
@@ -257,7 +268,3 @@ The process explicitly requires a pause after generating Epics to get user confi
 ## Target Audience
 
 Assume the primary reader is a **Product Owner or Scrum Master** who will create and manage these items in Jira, and **developers** who will implement them.
-
-```
-
-```
