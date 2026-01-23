@@ -21,11 +21,12 @@ Use these specific queries with the `search` tool:
 
 Prioritize information from these domains:
 
-1.  **bportugal.pt** (Banco de Portugal) - Official stats and forecasts.
-2.  **pordata.pt** - Statistical data.
-3.  **ine.pt** (Instituto Nacional de Estatística) - Official inflation/employment data.
-4.  **eco.sapo.pt** / **jornaldenegocios.pt** - Reliable economic news.
-5.  **doutorfinancas.pt** - Good for simplified explanations of new laws.
+1. **bportugal.pt** (Banco de Portugal) - Official stats and forecasts.
+2. **pordata.pt** - Statistical data.
+3. **ine.pt** (Instituto Nacional de Estatística) - Official inflation/employment data.
+4. **eco.sapo.pt** / **jornaldenegocios.pt** - Reliable economic news.
+5. **doutorfinancas.pt** - Good for simplified explanations of new laws.
+6. **google.com/finance/** - Market data and trends.
 
 ## ❌ Sources to Avoid
 
