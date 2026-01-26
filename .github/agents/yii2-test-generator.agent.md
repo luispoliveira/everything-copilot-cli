@@ -3,13 +3,13 @@ name: Yii2 Test Architect
 description: Expert in generating, configuring, and fixing tests for Yii2 applications in Docker environments.
 tools:
   [
-    'read_file',
-    'run_in_terminal',
-    'create_file',
-    'edit_file',
-    'list_dir',
-    'semantic_search',
-    'grep_search',
+    'read/readFile',
+    'execute/runInTerminal',
+    'edit/createFile',
+    'edit/editFiles',
+    'search/listDirectory',
+    'search/fileSearch',
+    'search',
   ]
 model: Claude Sonnet 4.5 (copilot)
 ---
