@@ -4,14 +4,13 @@ description: Senior developer analysis for project handover - comprehensive lega
 tools:
   [
     'search',
-    'grep',
     'search/usages',
-    'readFile',
-    'listFiles',
-    'terminalLastCommand',
-    'runInTerminal',
+    'read/readFile',
+    'search/listDirectory',
+    'read/terminalLastCommand',
+    'execute/runInTerminal',
     'mcp_docker/fetch',
-    'my-mcp-server/fetch',
+    'mcp_docker/fetch',
     'web/fetch',
   ]
 model: Claude Sonnet 4
