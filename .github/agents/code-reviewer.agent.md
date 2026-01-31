@@ -10,16 +10,6 @@ tools:
     'my-mcp-server/fetch',
     'web/fetch',
   ]
-model: Claude Sonnet 4
-handoffs:
-  - label: Fix Issues
-    agent: agent
-    prompt: Fix the issues identified above
-    send: false
-  - label: Security Audit
-    agent: security-auditor
-    prompt: Perform detailed security audit based on review findings
-    send: false
 ---
 
 # Expert Code Reviewer

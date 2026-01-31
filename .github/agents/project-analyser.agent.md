@@ -13,7 +13,6 @@ tools:
     'mcp_docker/fetch',
     'web/fetch',
   ]
-model: Claude Sonnet 4
 ---
 
 # Senior Developer Project Analyser

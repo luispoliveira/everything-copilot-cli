@@ -2,7 +2,6 @@
 name: Test Generator
 description: Generate comprehensive test suites
 tools: ['search', 'edit', 'search/usages']
-model: Claude Sonnet 4
 ---
 
 # Test Generation Expert

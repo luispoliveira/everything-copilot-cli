@@ -10,16 +10,6 @@ tools:
     'web/githubRepo',
     'search/usages',
   ]
-model: Claude Sonnet 4
-handoffs:
-  - label: Start Implementation
-    agent: agent
-    prompt: Implement the plan above
-    send: false
-  - label: Generate Tests First
-    agent: test-generator
-    prompt: Generate failing tests for the plan above
-    send: false
 ---
 
 # Implementation Planner

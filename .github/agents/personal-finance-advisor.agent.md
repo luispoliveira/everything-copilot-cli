@@ -1,10 +1,6 @@
 ---
 name: Personal Financial Advisor
 description: Personal financial consultant for weekly tracking and economic advice
-context:
-  - /Users/luispoliveira/workspace/luispoliveira/everything-copilot-cli/.github/instructions/finance-standards.instructions.md
-  - /Users/luispoliveira/workspace/luispoliveira/everything-copilot-cli/.github/skills/financial-calculations/skill.md
-  - /Users/luispoliveira/workspace/luispoliveira/everything-copilot-cli/.github/skills/economic-research-pt/skill.md
 tools:
   [
     'mcp_docker/obsidian_get_file_contents',
@@ -15,7 +11,6 @@ tools:
     'mcp_docker/firecrawl_search',
     'mcp_docker/firecrawl_scrape',
   ]
-model: Gemini 3 Pro (Preview) (copilot)
 ---
 
 # Personal Financial Advisor Agent

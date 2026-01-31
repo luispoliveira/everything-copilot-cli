@@ -11,7 +11,6 @@ tools:
     'search/fileSearch',
     'search',
   ]
-model: Claude Sonnet 4.5 (copilot)
 ---
 
 # Yii2 Test Architect Agent
