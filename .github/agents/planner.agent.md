@@ -3,9 +3,8 @@ name: Planner
 description: Generate detailed implementation plans
 tools:
   [
-    'search',
+    'mcp_docker/search',
     'mcp_docker/fetch',
-    'my-mcp-server/fetch',
     'web/fetch',
     'web/githubRepo',
     'search/usages',
