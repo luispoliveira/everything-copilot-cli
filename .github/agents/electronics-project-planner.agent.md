@@ -114,7 +114,7 @@ Search strategy:
 Generate the plan following the **exact structure** defined in the instructions file:
 
 1. Executive Summary
-2. System Architecture (with Mermaid or ASCII diagram)
+2. System Architecture (ASCII diagram)
 3. Challenge Breakdown (per challenge: requirements, BOM, wiring, firmware tasks, software tasks, risks)
 4. Technology Decision Matrix
 5. Implementation Roadmap (phased, with dependencies)

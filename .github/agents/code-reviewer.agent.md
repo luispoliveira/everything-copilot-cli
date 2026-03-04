@@ -3,7 +3,7 @@ name: Code Reviewer
 description: Expert code review with focus on quality, security, and best practices
 tools:
   [
-    'search',
+    'mcp_docker/search',
     'grep',
     'search/usages',
     'mcp_docker/fetch',
