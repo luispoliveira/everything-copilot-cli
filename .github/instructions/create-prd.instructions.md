@@ -8,8 +8,10 @@ To guide a developer in creating a detailed Product Requirements Document (PRD) 
 
 1. **Receive Initial Prompt:** The user provides a brief description or request for a new feature or functionality.
 2. **Ask Clarifying Questions:** Before writing the PRD, the AI _must_ ask clarifying questions to gather sufficient detail. The goal is to understand the "what" and "why" of the feature, not necessarily the "how" (which the developer will figure out). Make sure to provide options in letter/number lists so I can respond easily with my selections.
-3. **Generate PRD:** Based on the initial prompt and the user's answers to the clarifying questions, generate a PRD using the structure outlined below.
-4. **Save PRD:** Save the generated document as `[n]-prd-[feature-name].md` inside the `/tasks` directory. (Where `n` is a zero-padded 4-digit sequence starting from 0001, e.g., `0001-prd-user-authentication.md`, `0002-prd-dashboard.md`, etc.)
+3. **Analyze Architectural & Design Solutions:** Proactively evaluate 2 to 3 different design patterns (both low-level GoF patterns and high-level architectural patterns like MVC, microservices, etc.) that could solve the problem. Select a recommended approach.
+4. **Generate PRD:** Based on the initial prompt, the answers to the clarifying questions, and the chosen design patterns, generate a PRD using the structure outlined below.
+5. **Determine Sequence Number:** Before saving, read the `/tasks` directory to find the highest existing `[n]` prefix. Increment this number by 1 to generate the new sequence number (e.g., if `0003-prd-login.md` exists, use `0004`).
+6. **Save PRD:** Save the generated document as `[n]-prd-[feature-name].md` inside the `/tasks` directory. (Where `n` is the zero-padded 4-digit sequence calculated in the previous step).
 
 ## Clarifying Questions (Examples)
 
@@ -36,9 +38,10 @@ The generated PRD should include the following sections:
 5. **Non-Goals (Out of Scope):** Clearly state what this feature will _not_ include to manage scope.
 6. **Design Considerations (Optional):** Link to mockups, describe UI/UX requirements, or mention relevant components/styles if applicable.
 7. **Technical Considerations (Optional):** Mention any known technical constraints, dependencies, or suggestions (e.g., "Should integrate with the existing Auth module").
-8. **Success Metrics:** How will the success of this feature be measured? (e.g., "Increase user engagement by 10%", "Reduce support tickets related to X").
-9. **Open Questions:** List any remaining questions or areas needing further clarification.
-10. **Implementation Time** (Optional):\*\* Provide an estimated timeline for development, testing, and deployment.
+8. **Architecture & Design Patterns:** Provide 2-3 alternative design pattern/architecture solutions for implementing the feature (including both GoF structural/behavioral patterns and high-level architectural patterns). List pros and cons for each, and clearly highlight the recommended approach with a justification.
+9. **Success Metrics:** How will the success of this feature be measured? (e.g., "Increase user engagement by 10%", "Reduce support tickets related to X").
+10. **Open Questions:** List any remaining questions or areas needing further clarification.
+11. **Implementation Time** (Optional):\*\* Provide an estimated timeline for development, testing, and deployment.
 
 ## Target Audience
 
