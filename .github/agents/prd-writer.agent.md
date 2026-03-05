@@ -7,6 +7,9 @@ tools:
   - search/usages
   - mcp_docker/fetch
   - web/fetch
+  - read
+  - 'read/readFile'
+  - 'search/listDirectory'
 ---
 
 # Product Requirements Writer
