@@ -11,6 +11,7 @@ tools:
     'search/fileSearch',
     'search',
     'todo',
+    'web',
   ]
 model: 'Claude Sonnet 4.5 (copilot)'
 argument-hint: "Describe what you want to build (e.g. 'Create a User module with CRUD endpoints, Prisma, JWT auth')"
