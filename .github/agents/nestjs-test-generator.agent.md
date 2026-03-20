@@ -1736,6 +1736,7 @@ For **each significant issue encountered or lesson learned** during this run, ad
 
 ```markdown
 ### Pitfall: [Short descriptive title]
+
 - **Context**: [When/where does this happen?]
 - **What went wrong**: [Describe the mistake]
 - **Fix/Avoid**: [What to do instead]
@@ -1745,4 +1746,3 @@ For **each significant issue encountered or lesson learned** during this run, ad
 
 > Only add entries for genuinely new learnings. Do not duplicate existing entries.
 > If there is nothing new to record, add a brief comment: `<!-- Run on YYYY-MM-DD: no new learnings -->`
-

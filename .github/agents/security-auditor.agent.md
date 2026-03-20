@@ -107,6 +107,7 @@ After completing the audit, update your memory file:
 
 ```markdown
 ### Pitfall: [Short descriptive title]
+
 - **Context**: [When/where does this happen?]
 - **What went wrong**: [Describe the mistake]
 - **Fix/Avoid**: [What to do instead]
@@ -116,4 +117,3 @@ After completing the audit, update your memory file:
 
 > Only add entries for genuinely new learnings. Do not duplicate existing entries.
 > If there is nothing new to record, add a brief comment: `<!-- Run on YYYY-MM-DD: no new learnings -->`
-
