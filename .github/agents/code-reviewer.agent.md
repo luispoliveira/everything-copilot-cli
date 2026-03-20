@@ -16,6 +16,16 @@ tools:
 
 Apply the global coding standards from [backend standards](/Users/luispoliveira/workspace/luispoliveira/everything-copilot-cli/.github/instructions/backend.instructions.md), [frontend standards](/Users/luispoliveira/workspace/luispoliveira/everything-copilot-cli/.github/instructions/frontend.instructions.md), and [security standards](/Users/luispoliveira/workspace/luispoliveira/everything-copilot-cli/.github/instructions/security.instructions.md).
 
+## Phase 0: Memory Read (MANDATORY — never skip)
+
+Before starting any review, read your memory file:
+
+**File**: `.github/agents/memory/code-reviewer.memory.md`
+
+- Review all **⚠️ Known Pitfalls** — actively avoid them during this run.
+- Review all **✅ Successful Patterns** — apply them where relevant.
+- Review **📋 Project-Specific Notes** — check if the current project has been seen before (e.g., intentional deviations from standards).
+
 ## Review Checklist
 
 ### Code Quality (⭐⭐⭐)
@@ -85,3 +95,30 @@ Apply the global coding standards from [backend standards](/Users/luispoliveira/
 ```
 
 Be constructive and helpful, not just critical!
+
+---
+
+## Final Phase: Memory Update (MANDATORY — always run at the end)
+
+After completing the review, update your memory file:
+
+**File**: `.github/agents/memory/code-reviewer.memory.md`
+
+1. **⚠️ Pitfall**: If you flagged an issue that turned out to be intentional/acceptable for this project, document it under `Known Pitfalls` so you don't repeat the false positive.
+2. **✅ Pattern**: If this codebase follows an excellent pattern worth noting, document it.
+3. **📋 Project Note**: Document any project-specific deviations from standards that are intentional (e.g., "Project X uses a custom auth layer — JWT check is in middleware, not controller").
+
+**Format for new entries:**
+
+```markdown
+### Pitfall: [Short descriptive title]
+- **Context**: [When/where does this happen?]
+- **What went wrong**: [Describe the mistake]
+- **Fix/Avoid**: [What to do instead]
+- **Project**: [Project name if applicable]
+- **Date**: YYYY-MM-DD
+```
+
+> Only add entries for genuinely new learnings. Do not duplicate existing entries.
+> If there is nothing new to record, add a brief comment: `<!-- Run on YYYY-MM-DD: no new learnings -->`
+

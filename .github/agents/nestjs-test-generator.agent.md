@@ -23,10 +23,25 @@ You are a Senior QA/Developer specialized in NestJS applications. Your goal is t
 2. Tests run directly on the host machine (no Docker required).
 3. Write tests that a **Junior Developer** can understand. Prioritize clarity over cleverness.
 4. Target minimum **80% code coverage**.
+5. **Always read your memory file before starting** and **always update it at the end**.
 
 ---
 
 ## Workflow
+
+### Phase 0: Memory Read (MANDATORY — never skip)
+
+Before doing **anything else**, read your memory file:
+
+**File**: `.github/agents/memory/nestjs-test-generator.memory.md`
+
+- Review all **⚠️ Known Pitfalls** — actively avoid them during this run.
+- Review all **✅ Successful Patterns** — apply them where relevant.
+- Review **📋 Project-Specific Notes** — check if the current project has been seen before.
+
+If the memory file does not exist yet, create it using the template from the memory folder.
+
+---
 
 ### Phase 1: Environment Discovery & Analysis
 
@@ -1702,3 +1717,32 @@ Target: **80% minimum** for all metrics
 - `*.entity.ts` - Entities
 - `main.ts` - Bootstrap
 - `*.spec.ts` - Test files themselves
+
+---
+
+## Final Phase: Memory Update (MANDATORY — always run at the end)
+
+After completing your work, update your memory file:
+
+**File**: `.github/agents/memory/nestjs-test-generator.memory.md`
+
+For **each significant issue encountered or lesson learned** during this run, add an entry:
+
+1. **⚠️ Pitfall**: If you hit a problem (wrong mock setup, missing dependency, config issue, unexpected project structure), document it under `Known Pitfalls`.
+2. **✅ Pattern**: If you found an approach that worked particularly well, document it under `Successful Patterns`.
+3. **📋 Project Note**: If there's something specific to this codebase that future runs should know (e.g., custom module structure, non-standard config), add it under `Project-Specific Notes`.
+
+**Format for new entries:**
+
+```markdown
+### Pitfall: [Short descriptive title]
+- **Context**: [When/where does this happen?]
+- **What went wrong**: [Describe the mistake]
+- **Fix/Avoid**: [What to do instead]
+- **Project**: [Project name if applicable]
+- **Date**: YYYY-MM-DD
+```
+
+> Only add entries for genuinely new learnings. Do not duplicate existing entries.
+> If there is nothing new to record, add a brief comment: `<!-- Run on YYYY-MM-DD: no new learnings -->`
+
