@@ -7,9 +7,19 @@ tools:
     'mcp_docker/obsidian_append_content',
     'mcp_docker/obsidian_patch_content',
     'mcp_docker/obsidian_simple_search',
+    'mcp_docker/obsidian_list_files_in_vault',
+    'mcp_docker/obsidian_list_files_in_dir',
+    'mcp_docker/obsidian_batch_get_file_contents',
+    'mcp_docker/obsidian_complex_search',
+    'mcp_docker/obsidian_delete_file',
     'mcp_docker/search',
     'mcp_docker/firecrawl_search',
     'mcp_docker/firecrawl_scrape',
+    'edit/createFile',
+    'read/readFile',
+    'edit/editFiles',
+    'search/fileSearch',
+    'search/listDirectory',
   ]
 ---
 

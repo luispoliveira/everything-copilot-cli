@@ -16,7 +16,18 @@
 - **Date**: YYYY-MM-DD
 -->
 
-_No pitfalls recorded yet._
+### Pitfall: ExcelJS date parsing returns multiple formats
+
+- **Context**: When reading date cells from Excel files using ExcelJS library
+- **What went wrong**: Date validation using `instanceof Date` fails for dates stored as strings (DD/MM/YYYY) in Excel, causing valid dates to be skipped
+- **Fix/Avoid**: Create a robust date parser that handles:
+  - Date objects (already parsed)
+  - DD/MM/YYYY string format (common in European/Portuguese Excel files)
+  - ISO date strings
+  - Excel serial numbers
+  - Always validate the parsed date is a real calendar date
+- **Project**: ext-arrabida-wms-back-nx (ProductsService.importValidities)
+- **Date**: 2026-04-09
 
 ---
 
@@ -30,7 +41,18 @@ _No pitfalls recorded yet._
 - **Date**: YYYY-MM-DD
 -->
 
-_No patterns recorded yet._
+### Pattern: Multi-format date parsing helper
+
+- **Context**: When importing data from Excel files where date formats can vary
+- **Approach**: Create a private `parseValidityDate(value: unknown)` helper that:
+  1. Checks if value is already a valid Date object
+  2. Tries regex matching for DD/MM/YYYY format
+  3. Validates the parsed date components match the actual date (e.g., prevents 31/02/2026)
+  4. Falls back to standard Date constructor for ISO strings
+  5. Handles Excel serial numbers
+  6. Returns `null` for invalid inputs
+- **Project**: ext-arrabida-wms-back-nx
+- **Date**: 2026-04-09
 
 ---
 
@@ -42,7 +64,14 @@ _No patterns recorded yet._
 - Project Z uses better-auth with a custom session strategy
 -->
 
-_No project notes yet._
+### ext-arrabida-wms-back-nx
+
+- **Type**: Nx monorepo with NestJS apps and libs
+- **Structure**: Apps (api, cli, worker) + Libs (data-layer, auth, prisma, etc.)
+- **ORM**: Prisma with PostgreSQL
+- **Locations**: Portuguese farmacia (pharmacy) warehouse management system
+- **Date formats**: Uses DD/MM/YYYY in Excel imports (European format)
+- **Date**: 2026-04-09
 
 ---
 
