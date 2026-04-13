@@ -27,6 +27,281 @@ Apply these in order of priority:
 - **Service Layer** — controllers are thin; all business logic lives in services
 - **SOLID Principles** — every class has one reason to change; depend on abstractions, not concretions
 
+## Design Patterns
+
+### When to Use Design Patterns
+
+Apply patterns **only when they solve a specific problem** — never apply patterns "just because". Premature abstraction is as harmful as premature optimisation. Prefer simple, direct code until complexity demands a pattern.
+
+### Creational Patterns
+
+| Pattern       | Use When                                                            | Avoid When                              |
+| ------------- | ------------------------------------------------------------------- | --------------------------------------- |
+| **Factory**   | Object creation logic is complex or needs to be centralised         | A simple constructor is sufficient      |
+| **Builder**   | Objects require many optional parameters or multi-step construction | Objects have 3 or fewer required fields |
+| **Singleton** | Managing shared resources (logging, config, connection pools)       | Can be replaced with DI container       |
+
+**Example: Factory Pattern**
+
+```typescript
+// Use when you need to create different implementations based on context
+interface NotificationService {
+  send(message: string): Promise<void>;
+}
+
+class NotificationFactory {
+  static create(type: 'email' | 'sms' | 'push'): NotificationService {
+    switch (type) {
+      case 'email':
+        return new EmailNotificationService();
+      case 'sms':
+        return new SmsNotificationService();
+      case 'push':
+        return new PushNotificationService();
+    }
+  }
+}
+```
+
+**Example: Builder Pattern**
+
+```typescript
+// Use when constructing complex objects with optional parameters
+class QueryBuilder {
+  private filters: Record<string, any> = {};
+  private sorts: Array<[string, 'ASC' | 'DESC']> = [];
+  private limit?: number;
+
+  where(field: string, value: any): this {
+    this.filters[field] = value;
+    return this;
+  }
+
+  orderBy(field: string, direction: 'ASC' | 'DESC' = 'ASC'): this {
+    this.sorts.push([field, direction]);
+    return this;
+  }
+
+  take(limit: number): this {
+    this.limit = limit;
+    return this;
+  }
+
+  build(): Query {
+    return new Query(this.filters, this.sorts, this.limit);
+  }
+}
+
+// Usage
+const query = new QueryBuilder()
+  .where('status', 'active')
+  .where('age', { $gte: 18 })
+  .orderBy('createdAt', 'DESC')
+  .take(10)
+  .build();
+```
+
+### Structural Patterns
+
+| Pattern       | Use When                                                                         | Avoid When                                  |
+| ------------- | -------------------------------------------------------------------------------- | ------------------------------------------- |
+| **Adapter**   | Integrating third-party libraries or legacy systems with incompatible interfaces | You control both sides of the interface     |
+| **Decorator** | Adding responsibilities to objects dynamically without affecting other instances | Simple inheritance or composition is enough |
+| **Facade**    | Simplifying complex subsystems behind a unified interface                        | The subsystem is already simple             |
+| **Proxy**     | Controlling access, lazy loading, caching, or logging calls to objects           | Direct access is sufficient                 |
+
+**Example: Adapter Pattern**
+
+```typescript
+// Use when wrapping third-party services with incompatible interfaces
+interface PaymentProvider {
+  processPayment(amount: number, currency: string): Promise<PaymentResult>;
+}
+
+class StripeAdapter implements PaymentProvider {
+  constructor(private stripeClient: StripeSDK) {}
+
+  async processPayment(
+    amount: number,
+    currency: string,
+  ): Promise<PaymentResult> {
+    // Adapt Stripe's API to our interface
+    const charge = await this.stripeClient.charges.create({
+      amount: amount * 100, // Stripe uses cents
+      currency: currency.toLowerCase(),
+    });
+    return { success: charge.status === 'succeeded', transactionId: charge.id };
+  }
+}
+```
+
+**Example: Decorator Pattern**
+
+```typescript
+// Use when adding cross-cutting concerns (logging, caching, validation)
+interface UserService {
+  getUser(id: string): Promise<User>;
+}
+
+class CachedUserService implements UserService {
+  constructor(
+    private wrapped: UserService,
+    private cache: Cache,
+  ) {}
+
+  async getUser(id: string): Promise<User> {
+    const cached = await this.cache.get(`user:${id}`);
+    if (cached) return cached;
+
+    const user = await this.wrapped.getUser(id);
+    await this.cache.set(`user:${id}`, user, { ttl: 300 });
+    return user;
+  }
+}
+
+class LoggedUserService implements UserService {
+  constructor(
+    private wrapped: UserService,
+    private logger: Logger,
+  ) {}
+
+  async getUser(id: string): Promise<User> {
+    this.logger.info('Fetching user', { id });
+    const user = await this.wrapped.getUser(id);
+    this.logger.info('User fetched', { id, email: user.email });
+    return user;
+  }
+}
+
+// Usage: stack decorators
+const service = new LoggedUserService(
+  new CachedUserService(new UserService(), cache),
+  logger,
+);
+```
+
+### Behavioral Patterns
+
+| Pattern                     | Use When                                                            | Avoid When                      |
+| --------------------------- | ------------------------------------------------------------------- | ------------------------------- |
+| **Strategy**                | Selection between multiple algorithms or behaviours at runtime      | Only one algorithm exists       |
+| **Observer**                | Multiple objects need to react to state changes in another object   | Simple callbacks are sufficient |
+| **Command**                 | Encapsulating requests as objects (queues, undo/redo, transactions) | Direct method calls are clearer |
+| **Chain of Responsibility** | Multiple handlers can process a request, with dynamic ordering      | Only one handler exists         |
+| **Template Method**         | Defining the skeleton of an algorithm with subclass-specific steps  | The algorithm has no variation  |
+
+**Example: Strategy Pattern**
+
+```typescript
+// Use when you need to switch between algorithms at runtime
+interface PricingStrategy {
+  calculatePrice(basePrice: number): number;
+}
+
+class RegularPricing implements PricingStrategy {
+  calculatePrice(basePrice: number): number {
+    return basePrice;
+  }
+}
+
+class SeasonalDiscountPricing implements PricingStrategy {
+  constructor(private discountPercent: number) {}
+
+  calculatePrice(basePrice: number): number {
+    return basePrice * (1 - this.discountPercent / 100);
+  }
+}
+
+class VIPPricing implements PricingStrategy {
+  calculatePrice(basePrice: number): number {
+    return basePrice * 0.8; // 20% discount for VIP
+  }
+}
+
+class PriceCalculator {
+  constructor(private strategy: PricingStrategy) {}
+
+  setStrategy(strategy: PricingStrategy): void {
+    this.strategy = strategy;
+  }
+
+  calculate(basePrice: number): number {
+    return this.strategy.calculatePrice(basePrice);
+  }
+}
+```
+
+**Example: Chain of Responsibility Pattern**
+
+```typescript
+// Use when building middleware pipelines or validation chains
+abstract class ValidationHandler {
+  protected next?: ValidationHandler;
+
+  setNext(handler: ValidationHandler): ValidationHandler {
+    this.next = handler;
+    return handler;
+  }
+
+  async validate(data: any): Promise<void> {
+    await this.check(data);
+    if (this.next) {
+      await this.next.validate(data);
+    }
+  }
+
+  protected abstract check(data: any): Promise<void>;
+}
+
+class RequiredFieldsValidator extends ValidationHandler {
+  constructor(private fields: string[]) {
+    super();
+  }
+
+  protected async check(data: any): Promise<void> {
+    for (const field of this.fields) {
+      if (!data[field]) {
+        throw new ValidationError(`Field ${field} is required`);
+      }
+    }
+  }
+}
+
+class EmailFormatValidator extends ValidationHandler {
+  protected async check(data: any): Promise<void> {
+    if (data.email && !this.isValidEmail(data.email)) {
+      throw new ValidationError('Invalid email format');
+    }
+  }
+
+  private isValidEmail(email: string): boolean {
+    return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+  }
+}
+
+// Usage
+const validator = new RequiredFieldsValidator(['name', 'email']);
+validator.setNext(new EmailFormatValidator()).setNext(new AgeValidator());
+
+await validator.validate(userData);
+```
+
+### Pattern Selection Guide
+
+1. **Need to create objects?** → Creational patterns (Factory, Builder)
+2. **Need to wrap or adapt existing code?** → Structural patterns (Adapter, Decorator, Facade, Proxy)
+3. **Need to change behaviour at runtime?** → Behavioral patterns (Strategy, Command, Chain of Responsibility)
+4. **Need objects to communicate?** → Observer, Mediator
+5. **Still unsure?** → Don't use a pattern — keep it simple
+
+### Anti-Patterns to Avoid
+
+- **God Object** — classes that know or do too much; violates Single Responsibility Principle
+- **Anemic Domain Model** — domain objects with no behaviour, only getters/setters
+- **Leaky Abstraction** — abstractions that expose implementation details
+- **Golden Hammer** — using the same pattern everywhere regardless of fit
+- **Over-engineering** — applying patterns when simple code would suffice
+
 ## API Design
 
 - Follow **RESTful conventions**: nouns for resources, HTTP verbs for actions
