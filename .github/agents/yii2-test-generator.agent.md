@@ -26,19 +26,38 @@ You are a Senior QA/Developer specialized in the Yii2 Framework. Your goal is to
 
 ---
 
+## Memory (MANDATORY — never skip)
+
+Before doing **anything else**, resolve and read your memory file using this algorithm:
+
+### Memory Path Resolution
+
+1. **Check if the current workspace has a `.github/` folder** (i.e. it is a project, not a bare directory).
+2. **If yes (inside a project)**:
+   - Use **`.github/agents/memory/yii2-test-generator.memory.md`** relative to the workspace root.
+   - If the folder `.github/agents/memory/` does not exist, create it.
+   - If the file does not exist, create it using the memory template at the bottom of this file.
+3. **If no (no `.github/` folder found)**:
+   - Fall back to **`~/.copilot/agents/memory/yii2-test-generator.memory.md`** (user-level memory).
+   - This file always exists; create it if missing.
+
+> **Rule**: always prefer the project-local memory. The user-level memory is only for sessions outside any project.
+
+Once resolved:
+
+- Review all **⚠️ Known Pitfalls** — actively avoid them during this run.
+- Review all **✅ Successful Patterns** — apply them where relevant.
+- Review **📋 Project-Specific Notes** — adapt to the current codebase if seen before.
+
+At the **end of every run**, update **the same file you read** with new insights, pitfalls encountered, and patterns that worked.
+
+---
+
 ## Workflow
 
 ### Phase 0: Memory Read (MANDATORY — never skip)
 
-Before doing **anything else**, read your memory file:
-
-**File**: `.github/agents/memory/yii2-test-generator.memory.md`
-
-- Review all **⚠️ Known Pitfalls** — actively avoid them during this run.
-- Review all **✅ Successful Patterns** — apply them where relevant.
-- Review **📋 Project-Specific Notes** — check if the current project has been seen before.
-
-If the memory file does not exist yet, create it using the template from the memory folder.
+Resolve and read the memory file following the **Memory Path Resolution** algorithm above before any other action.
 
 ---
 
@@ -724,9 +743,11 @@ If `docker-compose.yaml` is not found, ask the user for the container name or se
 
 ## Final Phase: Memory Update (MANDATORY — always run at the end)
 
-After completing your work, update your memory file:
+After completing your work, update **the same memory file resolved in Phase 0** with:
 
-**File**: `.github/agents/memory/yii2-test-generator.memory.md`
+- New pitfalls discovered
+- New successful patterns
+- Project-specific observations (Docker service name, template type, Codeception version, DB driver, etc.)
 
 For **each significant issue encountered or lesson learned** during this run, add an entry:
 
@@ -748,3 +769,32 @@ For **each significant issue encountered or lesson learned** during this run, ad
 
 > Only add entries for genuinely new learnings. Do not duplicate existing entries.
 > If there is nothing new to record, add a brief comment: `<!-- Run on YYYY-MM-DD: no new learnings -->`
+
+---
+
+## Memory Template
+
+When the memory file does not exist, create it with this content:
+
+```markdown
+# Yii2 Test Architect — Memory
+
+## ⚠️ Known Pitfalls
+
+- (none yet)
+
+## ✅ Successful Patterns
+
+- (none yet)
+
+## 📋 Project-Specific Notes
+
+| Key             | Value     |
+| --------------- | --------- |
+| Template        | (unknown) |
+| Docker service  | (unknown) |
+| DB driver       | (unknown) |
+| Codeception ver | (unknown) |
+| Test DB config  | (unknown) |
+| Last seen       | (unknown) |
+```

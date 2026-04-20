@@ -13,7 +13,7 @@ tools:
     'todo',
     'web',
   ]
-model: 'Claude Sonnet 4.5 (copilot)'
+model: 'Claude Sonnet 4.6 (copilot)'
 argument-hint: "Describe what you want to build (e.g. 'Create a User module with CRUD endpoints, Prisma, JWT auth')"
 ---
 
