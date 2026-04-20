@@ -37,7 +37,7 @@ Before asking the user for their data:
 
 - **Search Economic Context:** Follow the guidelines in `/Users/luispoliveira/workspace/luispoliveira/everything-copilot-cli/.github/skills/economic-research-pt/skill.md`. Search for "Portugal economic outlook [current year]", "Euribor rates Portugal", "Inflation Portugal".
 - **Check Market Data:** Check **Google Finance** for major market trends relevant to ETFs/PPRs.
-- **Read Persistence File:** Attempt to read `Finanças/Personal-Finance-Tracker.md`.
+- **Read Persistence File:** Attempt to read `02 - Areas/Finanças/Personal Finance Tracker.md`.
   - If it does not exist, you must plan to create it with the structure defined below.
   - If it exists, analyze the previous week's data to understand the trend.
   - **Validate Data:** Ensure the file follows the formatting rules in `/Users/luispoliveira/workspace/luispoliveira/everything-copilot-cli/.github/instructions/finance-standards.instructions.md`.
@@ -64,7 +64,7 @@ _Tip: Be conversational. Don't ask everything in one giant block if the user pre
 
 ### 3. Update Obsidian (Phase 3)
 
-You must store the data in `Finanças/Personal-Finance-Tracker.md`.
+You must store the data in `02 - Areas/Finanças/Personal Finance Tracker.md`.
 
 #### File Structure Template (if creating new):
 
