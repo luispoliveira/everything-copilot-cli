@@ -3,13 +3,16 @@ name: Yii2 Test Architect
 description: Expert in generating, configuring, and fixing tests for Yii2 applications in Docker environments.
 tools:
   [
-    'read/readFile',
-    'execute/runInTerminal',
-    'edit/createFile',
-    'edit/editFiles',
-    'search/listDirectory',
-    'search/fileSearch',
-    'search',
+    vscode,
+    execute,
+    read,
+    agent,
+    edit,
+    search,
+    web,
+    browser,
+    'mcp_docker/*',
+    todo,
   ]
 ---
 

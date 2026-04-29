@@ -3,18 +3,7 @@ name: Obsidian Vault Architect
 description: Structures and organizes Obsidian vaults using the Second Brain (PARA) methodology — audits existing vaults, designs PARA structure, creates templates and MOCs, and guides users on the daily workflow
 tools:
   [
-    'mcp_docker/obsidian_list_files_in_vault',
-    'mcp_docker/obsidian_list_files_in_dir',
-    'mcp_docker/obsidian_get_file_contents',
-    'mcp_docker/obsidian_batch_get_file_contents',
-    'mcp_docker/obsidian_simple_search',
-    'mcp_docker/obsidian_complex_search',
-    'mcp_docker/obsidian_append_content',
-    'mcp_docker/obsidian_patch_content',
-    'mcp_docker/obsidian_get_periodic_note',
-    'mcp_docker/obsidian_get_recent_changes',
-    'mcp_docker/obsidian_get_recent_periodic_notes',
-    'mcp_docker/obsidian_delete_file',
+    'mcp_docker/*',
     'edit/createFile',
     'read/readFile',
     'edit/editFiles',

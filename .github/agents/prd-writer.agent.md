@@ -2,14 +2,18 @@
 name: Product Requirements Writer
 description: Creates comprehensive PRDs by analyzing codebases, asking clarifying questions, and optionally generating task lists and Jira tasks
 tools:
-  - edit
-  - mcp_docker/search
-  - search/usages
-  - mcp_docker/fetch
-  - web/fetch
-  - read
-  - 'read/readFile'
-  - 'search/listDirectory'
+  [
+    vscode,
+    execute,
+    read,
+    agent,
+    edit,
+    search,
+    web,
+    browser,
+    'mcp_docker/*',
+    todo,
+  ]
 ---
 
 # Product Requirements Writer

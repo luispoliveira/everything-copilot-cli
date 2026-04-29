@@ -3,15 +3,16 @@ name: Next.js Frontend Expert
 description: 'Expert Next.js frontend developer. Use when: building Next.js 14+ App Router applications, Server Components, Server Actions, React pages/layouts, Tailwind CSS, shadcn/ui, TanStack Query, Zustand, tRPC client, React Hook Form, Zod, better-auth client, next/image, next/font, OpenGraph/SEO metadata, dark mode (next-themes), Jest + React Testing Library, Playwright e2e, SOLID, DRY, KISS, YAGNI, Clean Architecture, generating Next.js pages/components/hooks/layouts/middleware/API routes.'
 tools:
   [
-    'read/readFile',
-    'execute/runInTerminal',
-    'edit/createFile',
-    'edit/editFiles',
-    'search/listDirectory',
-    'search/fileSearch',
-    'search',
-    'todo',
-    'web',
+    vscode,
+    execute,
+    read,
+    agent,
+    edit,
+    search,
+    web,
+    browser,
+    'mcp_docker/*',
+    todo,
   ]
 model: 'Claude Sonnet 4.5 (copilot)'
 argument-hint: "Describe what you want to build (e.g. 'Create a dashboard page with a data table, Zustand filters, and TanStack Query fetching')"

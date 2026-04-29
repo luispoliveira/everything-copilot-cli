@@ -3,16 +3,16 @@ name: Electronics Project Planner
 description: Analyses electronics/embedded systems proposals and generates comprehensive implementation plans for junior developers
 tools:
   [
-    'mcp_docker/search',
-    'mcp_docker/fetch',
-    'mcp_docker/firecrawl_search',
-    'mcp_docker/firecrawl_scrape',
-    'web/fetch',
-    'web/githubRepo',
-    'read/readFile',
-    'create/createFile',
-    'search/usages',
-    'execute/runInTerminal',
+    vscode,
+    execute,
+    read,
+    agent,
+    edit,
+    search,
+    web,
+    browser,
+    'mcp_docker/*',
+    todo,
   ]
 ---
 

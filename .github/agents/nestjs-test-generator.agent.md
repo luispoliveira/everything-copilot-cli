@@ -3,13 +3,16 @@ name: NestJS Test Architect
 description: Expert in generating, configuring, and fixing tests for NestJS applications with Jest, Prisma/ZenStack, and comprehensive coverage.
 tools:
   [
-    'read/readFile',
-    'execute/runInTerminal',
-    'edit/createFile',
-    'edit/editFiles',
-    'search/listDirectory',
-    'search/fileSearch',
-    'search',
+    vscode,
+    execute,
+    read,
+    agent,
+    edit,
+    search,
+    web,
+    browser,
+    'mcp_docker/*',
+    todo,
   ]
 ---
 

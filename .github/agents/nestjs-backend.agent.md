@@ -3,15 +3,16 @@ name: NestJS Backend Expert
 description: 'Expert NestJS backend developer. Use when: building REST APIs, microservices, WebSockets, gRPC, tRPC, CQRS, event sourcing, Bull/BullMQ queues, Prisma ORM, PostgreSQL/MongoDB/Redis, better-auth, OpenAPI/Swagger, rate limiting, structured logging, DTO validation, Repository Pattern, Clean Architecture, SOLID, DRY, KISS, YAGNI, Dependency Injection, generating NestJS modules/services/controllers/guards/interceptors/pipes/decorators.'
 tools:
   [
-    'read/readFile',
-    'execute/runInTerminal',
-    'edit/createFile',
-    'edit/editFiles',
-    'search/listDirectory',
-    'search/fileSearch',
-    'search',
-    'todo',
-    'web',
+    vscode,
+    execute,
+    read,
+    agent,
+    edit,
+    search,
+    web,
+    browser,
+    'mcp_docker/*',
+    todo,
   ]
 model: 'Claude Sonnet 4.6 (copilot)'
 argument-hint: "Describe what you want to build (e.g. 'Create a User module with CRUD endpoints, Prisma, JWT auth')"

@@ -3,15 +3,16 @@ name: Yii2 Backend Expert
 description: 'Expert Yii2 backend developer. Use when: building REST APIs, CRUD modules, ActiveRecord models, migrations, RBAC, Gii code generation, RESTful controllers, behaviors, components, widgets, console commands, Yii2 Basic/Advanced templates, ActiveQuery scopes, events, behaviors, Codeception/PHPUnit tests, Docker environments.'
 tools:
   [
-    'read/readFile',
-    'execute/runInTerminal',
-    'edit/createFile',
-    'edit/editFiles',
-    'search/listDirectory',
-    'search/fileSearch',
-    'search',
-    'todo',
-    'web',
+    vscode,
+    execute,
+    read,
+    agent,
+    edit,
+    search,
+    web,
+    browser,
+    'mcp_docker/*',
+    todo,
   ]
 model: 'Claude Sonnet 4.5 (copilot)'
 argument-hint: "Describe what you want to build (e.g. 'Create a User CRUD module with RBAC, REST API, and migrations')"
